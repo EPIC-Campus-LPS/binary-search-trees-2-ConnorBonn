@@ -1,3 +1,4 @@
+import java.util.EmptyStackException;
 import java.util.Stack;
 
 public class BinarySearchTree<E extends Comparable<E>> {
@@ -13,16 +14,14 @@ public class BinarySearchTree<E extends Comparable<E>> {
             TreeNode<E> temp = root;
             while (temp.getRightChild() != null && temp.getLeftChild() != null) {
                 if (temp.getValue().compareTo(addedElement.getValue()) <= 0) {
-                    if(temp.getLeftChild() == null){
+                    if (temp.getLeftChild() == null) {
                         temp.setLeftChild(addedElement);
+                    } else {
+                        temp = temp.getLeftChild();
                     }
-                        else{
-                            temp = temp.getLeftChild();
-                    }
-                    if(temp.getRightChild() == null){
+                    if (temp.getRightChild() == null) {
                         temp.setRightChild(addedElement);
-                    }
-                    else{
+                    } else {
                         temp = temp.getRightChild();
                     }
                 }
@@ -31,7 +30,7 @@ public class BinarySearchTree<E extends Comparable<E>> {
         countNode++;
     }
 
-    boolean contains(E value) {
+    /* boolean contains(E value) {
 
     }
 
@@ -50,24 +49,38 @@ public class BinarySearchTree<E extends Comparable<E>> {
     void printInorder() {
 
     }
-
+*/
     void printPreorder() {
         Stack<TreeNode<E>> stack = new Stack<>();
         TreeNode<E> current = root;
+        if (root == null) {
+            throw new EmptyStackException();
+        } else {
+            while (current != null || !stack.isEmpty()) {
+                while (current != null) {
+                    System.out.println(root);
+                    if(current.getLeftChild() != null){
+                        System.out.println(current.getLeftChild());
+                        current = current.getLeftChild();
+                    }
+                    else if(current.getRightChild() != null){
+                        System.out.println(current.getRightChild());
+                        current = current.getRightChild();
+                    }
+                    else{
 
-        while(current != null || !stack.isEmpty()){
-            while(current != null){
-                System.out.println();
+
+                    }
+                }
             }
         }
     }
-
-    void printPostorder() {
+  /*  void printPostorder() {
 
     }
 
     E delete(E value) {
         countNode--;
         return value;
-    }
+    }*/
 }
