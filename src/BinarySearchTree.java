@@ -3,6 +3,7 @@ import java.util.Stack;
 
 public class BinarySearchTree<E extends Comparable<E>> {
     private TreeNode<E> root;
+    private int countLeaf = 0;
     private int countNode = 0;
 
     void add(E value) {
@@ -12,15 +13,18 @@ public class BinarySearchTree<E extends Comparable<E>> {
             root = addedElement;
         } else {
             TreeNode<E> temp = root;
-            while (temp.getRightChild() != null && temp.getLeftChild() != null) {
-                if (temp.getValue().compareTo(addedElement.getValue()) <= 0) {
+            while (true) {
+                if (temp.getValue().compareTo(addedElement.getValue()) >= 0) {
                     if (temp.getLeftChild() == null) {
                         temp.setLeftChild(addedElement);
+                        break;
                     } else {
                         temp = temp.getLeftChild();
                     }
+                } else if (temp.getValue().compareTo((addedElement.getValue())) < 0) {
                     if (temp.getRightChild() == null) {
                         temp.setRightChild(addedElement);
+                        break;
                     } else {
                         temp = temp.getRightChild();
                     }
@@ -33,45 +37,63 @@ public class BinarySearchTree<E extends Comparable<E>> {
     /* boolean contains(E value) {
 
     }
-
+*/
     int countNodes() {
         return countNode;
     }
 
     int countLeafNodes() {
-
-    }
-
-    int getHeight() {
-
-    }
-
-    void printInorder() {
-
-    }
-*/
-    void printPreorder() {
         Stack<TreeNode<E>> stack = new Stack<>();
         TreeNode<E> current = root;
-        if (root == null) {
-            throw new EmptyStackException();
-        } else {
-            while (current != null || !stack.isEmpty()) {
-                while (current != null) {
-                    System.out.println(root);
-                    if(current.getLeftChild() != null){
-                        System.out.println(current.getLeftChild());
-                        current = current.getLeftChild();
-                    }
-                    else if(current.getRightChild() != null){
-                        System.out.println(current.getRightChild());
-                        current = current.getRightChild();
-                    }
-                    else{
-
-
-                    }
+        while (current != null || !stack.isEmpty()) {
+            while (current != null) {
+                if (current.getRightChild() == null && current.getLeftChild() == null) {
+                    countLeaf++;
+                } else {
+                    stack.push(current.getRightChild());
+                    current = current.getLeftChild();
                 }
+            }
+            if (!stack.isEmpty()) {
+                current = stack.pop();
+            }
+        }
+        return countLeaf;
+    }
+
+    /*
+        int getHeight() {
+
+        }
+    */
+    void printInorder() {
+        Stack<TreeNode<E>> stack = new Stack<>();
+        TreeNode<E> parent = root;
+        TreeNode<E> current = root;
+        while (parent.getLeftChild() != null) {
+
+            if (current.getRightChild() != null && current.getLeftChild() == null) {
+                System.out.println(current);
+                parent = current;
+                current = parent.getRightChild();
+            } else if (current.getRightChild() == null && current.getLeftChild() == null) {
+                System.out.println(current);
+                System.out.println(parent);
+            }
+        }
+    }
+
+    public void printPreorder() {
+        Stack<TreeNode<E>> stack = new Stack<>();
+        TreeNode<E> current = root;
+        while (current != null || !stack.isEmpty()) {
+            while (current != null) {
+                System.out.println(current.getValue());
+                stack.push(current.getRightChild());
+                current = current.getLeftChild();
+            }
+            if (!stack.isEmpty()) {
+                current = stack.pop();
             }
         }
     }
@@ -84,3 +106,4 @@ public class BinarySearchTree<E extends Comparable<E>> {
         return value;
     }*/
 }
+

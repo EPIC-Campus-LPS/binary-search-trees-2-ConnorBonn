@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3cde06c1-8483-4df7-9aba-283a057c0dd3" name="Changes" comment="add function count and started print preorder">
+    <list default="true" id="3cde06c1-8483-4df7-9aba-283a057c0dd3" name="Changes" comment="preorder">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/BinarySearchTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BinarySearchTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,11 +56,20 @@
       <option name="project" value="LOCAL" />
       <updated>1700245507775</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="preorder">
+      <option name="closed" value="true" />
+      <created>1701195618009</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1701195618009</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add function count and started print preorder" />
-    <option name="LAST_COMMIT_MESSAGE" value="add function count and started print preorder" />
+    <MESSAGE value="preorder" />
+    <option name="LAST_COMMIT_MESSAGE" value="preorder" />
   </component>
 </project>
