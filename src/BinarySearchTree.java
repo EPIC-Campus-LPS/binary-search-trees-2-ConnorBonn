@@ -13,7 +13,6 @@ public class BinarySearchTree<E extends Comparable<E>> {
         if (root == null) {
             //changes the element to the root
             root = addedElement;
-            countLeaf = 1;
         } else {
             //Creates a new node
             TreeNode<E> temp = root;
@@ -196,25 +195,28 @@ public class BinarySearchTree<E extends Comparable<E>> {
                     if(current.getValue() == value){
                         if(current.getLeftChild() == null && current.getRightChild() != null){
                             parent.setLeftChild(current.getRightChild());
+                            break;
                         }
                         else if(current.getLeftChild() != null && current.getRightChild() == null){
                             parent.setLeftChild(current.getLeftChild());
                             current.getLeftChild().setRightChild(current.getRightChild());
                             current = current.getLeftChild();
+                            break;
                         }
-                        else if(current.getLeftChild() == null && current.getLeftChild() == null){
+                        else if(current.getLeftChild() == null && current.getRightChild() == null){
                             current = null;
+                            break;
                         }
-                    }
-                    //pushes currents right child to the stack
-                    stack.push(current.getRightChild());
-                    //moves to the left
-                    parent = parent.getLeftChild();
-                    if(parent.getLeftChild() == null){
-                        current = parent.getRightChild();
-                    }
-                    else {
-                        current = parent.getLeftChild();
+                    }else {
+                        //pushes currents right child to the stack
+                        stack.push(current.getRightChild());
+                        //moves to the left
+                        parent = parent.getLeftChild();
+                        if (parent.getLeftChild() == null) {
+                            current = parent.getRightChild();
+                        } else {
+                            current = parent.getLeftChild();
+                        }
                     }
                 }
                 if (!stack.isEmpty()) {

@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3cde06c1-8483-4df7-9aba-283a057c0dd3" name="Changes" comment="preorder">
+    <list default="true" id="3cde06c1-8483-4df7-9aba-283a057c0dd3" name="Changes" comment="Delete broke&#10;everything else done">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/BinarySearchTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BinarySearchTree.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
@@ -66,7 +66,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701195618009</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Delete broke&#10;everything else done">
+      <option name="closed" value="true" />
+      <created>1702405092436</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1702405092436</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -83,7 +91,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add function count and started print preorder" />
     <MESSAGE value="preorder" />
-    <option name="LAST_COMMIT_MESSAGE" value="preorder" />
+    <MESSAGE value="Delete broke&#10;everything else done" />
+    <option name="LAST_COMMIT_MESSAGE" value="Delete broke&#10;everything else done" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
